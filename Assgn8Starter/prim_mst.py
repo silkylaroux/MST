@@ -23,32 +23,6 @@ def initialize_disjoint_set(items):
     return {item: None for item in items}
 
 
-def tree_contains(tree, node):
-    for x in tree:
-        #print(x[2])
-        if x[1] == node and x[2] != None:
-            return True
-    return False
-
-
-
-def change_tree(tre, nod1, nod2, weig):
-    for x in range(len(tre)):
-        if tre[x][1] == nod1:
-            tre[x][0]= weig
-            tre[x][2] = nod2
-            return tre
-
-
-    return tre
-
-
-def less_weight(tre, nod1, weig):
-    for x in tre:
-        if x[1] == nod1:
-            if x[0] > weig:
-                return True
-    return False
 
 
 # Do not change this function's name or the arguments it takes. Also, do not change
@@ -63,12 +37,8 @@ def compute_mst(filename):
     described by the contents of the file named filename.'''
 
     graph_holder = read_weighted_undirected_graph(filename)
-    node_sets = initialize_disjoint_set(graph_holder.get_nodes())
-    node_count = len(node_sets)
     edges = [(graph_holder.attributes_of(v, u)['weight'], v, u) for u,v in graph_holder.get_edges()]
     edges.sort()
-    tree = []
-    holder = set()
 
     PARENT = {}
     KEY = {}
@@ -76,14 +46,11 @@ def compute_mst(filename):
     for x in graph_holder.get_nodes():
         PARENT[x]= None
         KEY[x] = 99999
-    #print(PARENT)
-    #print(edges)
 
-    #print(KEY)
     A={}
     start = edges[0][1]
     KEY[start]=0
-    #print(KEY)
+
     que = list(graph_holder.get_nodes())
     print(que)
     while len(que) != 0:
@@ -118,66 +85,6 @@ def min_from_que(dict, q):
 
 
 
-    '''for y in list(graph_holder.get_nodes()):
-        tree.append([99999,y,None])
-    tree[0][0]=0
-    que = []
-    for y in edges:
-        if y[1] == tree[0][1]:
-            heapq.heappush(que,y)
-            holder.add(y)
-    #print(que)
-    while len(que) != 0:
-        #print(que)
-        weight, tree_node, node = heapq.heappop(que)
-
-        #print(que)
-        #print(weight, tree_node, node)
-        #print(tree_node)
-        #print(graph_holder.neighbors(tree_node))
-        for x in graph_holder.neighbors(tree_node):
-            if(not tree_contains(tree,x)):
-                #print(tree)
-                tree = change_tree(tree,tree_node, node,weight)
-                #print(tree)
-                for y in edges:
-                    #print(que)
-                    if y[1] == node:
-                        if(not check_in(y, holder)):
-                            heapq.heappush(que, y)
-                            holder.add(y)
-
-
-            elif(less_weight(tree,tree_node, weight)):
-                #print(tree)
-                tree = change_tree(tree, tree_node, node, weight)
-                #print(tree)
-                #print()
-                for y in edges:
-                    if y[1] == node:
-                        if (not check_in(y,holder)):
-                            heapq.heappush(que, y)
-                            holder.add(y)
-
-            else:
-                pass
-
-    print(tree)
-    print(que)'''
-
-def check_in(inside, s):
-    if(inside in s):
-        return True
-
-    x = inside[0]
-    y = inside[1]
-    z = inside[2]
-    holder = (x,z,y)
-
-    if(holder in s):
-        return True
-
-    return False
 
 
 
