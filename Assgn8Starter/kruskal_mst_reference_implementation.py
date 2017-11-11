@@ -62,4 +62,11 @@ def compute_mst(filename):
     write_tree_edges_to_file(tree_edges, filename + '.kruskal.mst')
 
 if __name__ == "__main__":
-    compute_mst("test1")
+    compute_mst("test5")
+    compute_mst("test50")
+    compute_mst("test100")
+    compute_mst("test200")
+    compute_mst("test500")
+    compute_mst("test1000")
+    compute_mst("test2500")
+    compute_mst("test5000")

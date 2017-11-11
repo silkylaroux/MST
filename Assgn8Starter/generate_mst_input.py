@@ -50,4 +50,11 @@ def write_graph_edges_to_file(filename, edges):
             f.write("{} {} {}\n".format(v1, v2, w))
 
 if __name__ == "__main__":
-    write_graph_edges_to_file("test20",generate_weighted_undirected_graph_edges(20,4))
+    #write_graph_edges_to_file("test5",generate_weighted_undirected_graph_edges(5,4))
+    #write_graph_edges_to_file("test50", generate_weighted_undirected_graph_edges(50, 4))
+    #write_graph_edges_to_file("test100", generate_weighted_undirected_graph_edges(100, 4))
+    #write_graph_edges_to_file("test200", generate_weighted_undirected_graph_edges(200, 4))
+    #write_graph_edges_to_file("test500", generate_weighted_undirected_graph_edges(500, 4))
+    #write_graph_edges_to_file("test1000", generate_weighted_undirected_graph_edges(1000, 4))
+    write_graph_edges_to_file("test2500", generate_weighted_undirected_graph_edges(2500, 3))
+    #write_graph_edges_to_file("test5000", generate_weighted_undirected_graph_edges(5000, 4))
