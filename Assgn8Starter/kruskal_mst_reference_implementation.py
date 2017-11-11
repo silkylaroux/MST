@@ -60,3 +60,6 @@ def compute_mst(filename):
         if len(tree_edges) == node_count - 1:
             break
     write_tree_edges_to_file(tree_edges, filename + '.kruskal.mst')
+
+if __name__ == "__main__":
+    compute_mst("test1")
