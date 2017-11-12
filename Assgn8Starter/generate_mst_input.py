@@ -56,5 +56,6 @@ if __name__ == "__main__":
     #write_graph_edges_to_file("test200", generate_weighted_undirected_graph_edges(200, 4))
     #write_graph_edges_to_file("test500", generate_weighted_undirected_graph_edges(500, 4))
     #write_graph_edges_to_file("test1000", generate_weighted_undirected_graph_edges(1000, 4))
-    write_graph_edges_to_file("test2500", generate_weighted_undirected_graph_edges(2500, 3))
+    #write_graph_edges_to_file("test2500", generate_weighted_undirected_graph_edges(2500, 3))
     #write_graph_edges_to_file("test5000", generate_weighted_undirected_graph_edges(5000, 4))
+    write_graph_edges_to_file("2test50000", generate_weighted_undirected_graph_edges(50000, 3))

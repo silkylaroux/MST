@@ -102,9 +102,8 @@ def compute_mst(filename):
     write_tree_edges_to_file(tree_edges, filename + '.mst')
 
 
+# method for getting the time for my implementation
 def compute_mst_time(filename, time1):
-    '''Use Prim's algorithm to compute the minimum spanning tree of the weighted undirected graph
-    described by the contents of the file named filename.'''
 
     # reading in the file
     graph_holder = read_weighted_undirected_graph(filename)
@@ -144,7 +143,7 @@ def compute_mst_time(filename, time1):
     print("{0:.5f}".format(round(end_time,5)))
 
 
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     compute_mst_time("test5",5)
     compute_mst_time("test50", 50)
     compute_mst_time("test100", 100)
@@ -161,3 +160,4 @@ if __name__ == "__main__":
     compute_mst("test1000")
     compute_mst("test2500")
     compute_mst("test5000")
+    compute_mst_time("2test50000",50000)'''
